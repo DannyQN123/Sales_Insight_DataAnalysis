@@ -1,5 +1,5 @@
 # Sales_Insight_DataAnalysis
-Analyze sales data for insights & build Dashboards
+Analyze Sales Data of a Peripheral Store for insights & build Dashboards
 
 ## Data Analysis Using SQL
 1. Show distrinct product codes that were sold in chennai
