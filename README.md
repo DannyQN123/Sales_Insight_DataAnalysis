@@ -1,5 +1,6 @@
 # Sales_Insight_DataAnalysis
-Analyze Sales Data of a Peripheral Store for Insights & build Dashboards
+Analyze Sales Data of a Peripheral Store for Insights & build Dashboards.
+The purpose is to understand the sales profile of the company: which region has the highest revenue, which products are sold the most, which regions are declining in revenues…….
 
 ## Data Analysis Using SQL
 1. Show distrinct product codes that were sold in chennai
