@@ -1,10 +1,14 @@
-![Screenshot 2024-02-11 115740](https://github.com/DannyQN123/Sales_Insight_DataAnalysis/assets/107457149/a05420d4-f708-4505-82bd-c1b5c12f0a38)# Sales_Insight_DataAnalysis
-Analyze Sales Data of a Peripheral Store for Insights & build Dashboards.  
+# Analyze Sales Data of a Peripheral Store for Insights & build Dashboards.  
 The purpose is to understand the sales profile of the company. Some of the questions asked are:
 - Which region has the highest revenue ?
 - Which products are sold the most ?
 - Which regions are declining in revenues ?
 - Show the revenue trend of the company over the years.
+
+## Flow of analysis
+- Explore the data with SQL in MySQL database  
+- Connect MySQL database with PowerBI (Tableau), and use Power Query to process data.
+- Building DashBoards.
 
 ## Data Analysis Using SQL
 1. Show distrinct product codes that were sold in chennai
