@@ -1,4 +1,4 @@
-# Sales_Insight_DataAnalysis
+![Screenshot 2024-02-11 115740](https://github.com/DannyQN123/Sales_Insight_DataAnalysis/assets/107457149/a05420d4-f708-4505-82bd-c1b5c12f0a38)# Sales_Insight_DataAnalysis
 Analyze Sales Data of a Peripheral Store for Insights & build Dashboards.  
 The purpose is to understand the sales profile of the company. Some of the questions asked are:
 - Which region has the highest revenue ?
@@ -51,4 +51,13 @@ Tableau
 ![Screenshot (95)](https://github.com/DannyQN123/Sales_Insight_DataAnalysis/assets/107457149/cb6d1a9a-2bd0-4002-b941-2d66538b8ea5)
 ![Screenshot (96)](https://github.com/DannyQN123/Sales_Insight_DataAnalysis/assets/107457149/517d4824-7860-4139-9d72-8c2c3ba8e567)
 
+## Some Insights from the DashBoard: 
+- The ***Revenue Trend*** declines overtime, and as we look deeper into the revenue trend of each markets (in the ***Revenue by Markets*** section), we see that revenue trend of the top 3 markets (Delhi NCR, Mumbai, Ahmed) also in decline as well.
 
+![Screenshot 2024-02-11 115622](https://github.com/DannyQN123/Sales_Insight_DataAnalysis/assets/107457149/67162b56-15ff-4b89-a765-df94f7f219e4)
+![Screenshot 2024-02-11 115656](https://github.com/DannyQN123/Sales_Insight_DataAnalysis/assets/107457149/e3941a3f-002e-4362-89c2-97c52af197ab)
+![Screenshot 2024-02-11 115740](https://github.com/DannyQN123/Sales_Insight_DataAnalysis/assets/107457149/0c1f851d-4c35-4f17-98e2-ca344c289210)  
+
+- Looking deeper, we will see that Revenue from top products in each of these markets are also declining over-time. What we can conclude is that the decline in ***Revenue Trend*** happens company wide, and further information is needed to derive any more specific conclusion (more informations about ***market demands***, for examples, or ***market trend***, as the decline in Revenue happens company-wide)  
+
+    
