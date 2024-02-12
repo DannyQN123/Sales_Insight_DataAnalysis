@@ -36,7 +36,7 @@
     `SELECT SUM(transactions.sales_amount) FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020
 and transactions.market_code="Mark001";`
 
-## Data Precessing with Power Query: 
+## Data Processing with Power Query: 
 Power Query works almost like Excel spreadsheets, as in if there are unwanted values in a column, you can ***Filter*** them out by interacting with the data table.  
 
 - There are values 0 and -1 in the ***sales_amount*** column of ***sales transaction*** table. We want to filter them out.
