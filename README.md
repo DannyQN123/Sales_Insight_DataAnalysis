@@ -1,9 +1,9 @@
 # Analyze Sales Data of a Peripheral Store for Insights & build Dashboards.  
-The purpose is to understand the sales profile of the company. Some of the questions asked are:
-- Which region has the highest revenue ?
+***The business objective is:*** to understand why the Revenue of the company is declining over the years. To better understand the sales profile of the company, some of the questions asked are:
+- Which regions have the highest revenue ?
 - Which products are sold the most ?
 - Which regions are declining in revenues ?
-- Show the revenue trend of the company over the years.
+- What are our top customers by Revenues ? 
 
 ## Flow of analysis
 - Explore the data with SQL in MySQL database  
@@ -11,30 +11,41 @@ The purpose is to understand the sales profile of the company. Some of the quest
 - Building DashBoards.
 
 ## Data Analysis Using SQL
-1. Show distrinct product codes that were sold in chennai
+- Show distrinct product codes that were sold in chennai
 
     `SELECT distinct product_code FROM transactions where market_code='Mark001';`
 
-1. Show transactions where currency is US dollars
+- Show transactions where currency is US dollars
 
     `SELECT * from transactions where currency="USD"`
 
-1. Show transactions in 2020 join by date table
+- Show transactions in 2020 join by date table
 
     `SELECT transactions.*, date.* FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020;`
 
-1. Show total revenue in year 2020,
+- Show total revenue in year 2020,
 
-    `SELECT SUM(transactions.sales_amount) FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020 and transactions.currency="INR\r" or transactions.currency="USD\r";`
+    `SELECT SUM(transactions.sales_amount) FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020 and transactions.currency="INR" or transactions.currency="USD";`
 	
-1. Show total revenue in year 2020, January Month,
+- Show total revenue in year 2020, January Month,
 
-    `SELECT SUM(transactions.sales_amount) FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020 and and date.month_name="January" and (transactions.currency="INR\r" or transactions.currency="USD\r");`
+    `SELECT SUM(transactions.sales_amount) FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020 and and date.month_name="January" and (transactions.currency="INR" or transactions.currency="USD");`
 
-1. Show total revenue in year 2020 in Chennai
+- Show total revenue in year 2020 in Chennai
 
     `SELECT SUM(transactions.sales_amount) FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020
 and transactions.market_code="Mark001";`
+
+## Data Precessing with Power Query: 
+Power Query works almost like Excel spreadsheets, as in if there are unwanted values in a column, you can ***Filter*** them out by interacting with the data table.  
+
+- There are values 0 and -1 in the ***sales_amount*** column of ***sales transaction*** table. We want to filter them out.
+
+    `Table.SelectRows(sales_transactions, each ([sales_amount] <> -1 and [sales_amount] <> 0))`
+
+- Convert transactions that is in USD currency into INR currency (as indicated in ***currency*** column of ***sales transactions*** table). We will create a new column called ***norm_sales_amount***, where the entry to each row will equal to the amount in ***sales_amount*** column IF the ***currency*** is in INR, else we will multiply the ***sales_amount*** by 75 as the conversion rate from USD to INR. 
+
+    `Table.AddColumn(#"Filtered Rows", "norm_sales_amount", each if [currency] = 'USD' then [sales_amount]*75 else [sales_amount]`
 
 ## Data Model:
 PowerBI
@@ -62,6 +73,7 @@ Tableau
 ![Screenshot 2024-02-11 115656](https://github.com/DannyQN123/Sales_Insight_DataAnalysis/assets/107457149/e3941a3f-002e-4362-89c2-97c52af197ab)
 ![Screenshot 2024-02-11 115740](https://github.com/DannyQN123/Sales_Insight_DataAnalysis/assets/107457149/0c1f851d-4c35-4f17-98e2-ca344c289210)  
 
-- Looking deeper, we will see that Revenue from top products in each of these markets are also declining over-time. What we can conclude is that the decline in ***Revenue Trend*** happens company wide, and further information is needed to derive any more specific conclusion (more informations about ***market demands***, for examples, or ***market trend***, as the decline in Revenue happens company-wide)  
+- Looking deeper, we will see that Revenue from top customers in each of these markets are also declining over-time. What we can conclude is that the decline in ***Revenue Trend*** happens company-wide.
+- Possible explanation for the decline in Revenue: Given that this company sells Peripheral Goods - ***a type of durable goods***, we can say that the sales of the company was high initially as people were in need of these products. Ovetime, however, there's ***no repeat purchase need*** (because the company's products are ***durable goods***), the market may become saturated, leading to ***declining sales***.
 
     
